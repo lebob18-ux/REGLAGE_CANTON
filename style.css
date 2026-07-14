@@ -1,0 +1,24 @@
+body { font-family: Arial, sans-serif; max-width: 420px; margin: auto; padding: 15px; background: #f4f6f8; }
+.panel { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 15px; }
+hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+.row { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 10px; }
+.row-support { display: flex; gap: 10px; align-items: center; justify-content: center; }
+input, select, button { padding: 7px; font-size: 16px; border-radius: 6px; background: #eee; border: 1px solid #ccc; text-align: center; box-sizing: border-box; }
+#longueur, #distance { background: #e9ecef; color: #6c757d; }
+#supportList { width: 70% !important; }
+#axeFlags { display: none; align-items: center; justify-content: center; position: relative; width: 40px; }
+.flag-tilt1 { transform: rotate(35deg); display: inline-block; position: absolute; left: 15px; }
+.flag-tilt2 { transform: rotate(-35deg) scaleX(-1); display: inline-block; position: absolute; right: 15px; }
+#longueur { width: 90px; } #at1, #at2 { width: 70px; } #distance { width: 100px; }
+.result { font-size: 22px; font-weight: bold; display: flex; justify-content: center; align-items: center; gap: 6px; margin: 10px 0; }
+.axeRow { display: flex; justify-content: center; gap: 30px; margin-top: 10px; }
+.axe { position: relative; width: 60px; height: 60px; }
+.flag { position: absolute; font-size: 32px; left: 50%; bottom: 0; transform-origin: bottom center; }
+.flag1 { transform: translateX(-50%) rotate(35deg); }
+.flag2 { transform: translateX(-50%) rotate(-35deg) scaleX(-1); }
+.axeLabel { font-weight: bold; text-align: center; width: 80px; font-size: 0.9em; }
+.c-display { font-size: 0.85em; color: #d32f2f; font-weight: bold; height: 18px; margin-top: 2px; }
+#smartContainer { margin-top: 20px; padding: 15px; border: 2px dashed #007bff; border-radius: 8px; background: #f0f8ff; }
+.smartLine { display: flex; justify-content: space-between; margin: 8px 0; font-weight: bold; color: #333; align-items: center; }
+.btn-export { width: 100%; margin-top: 10px; padding: 10px; border: none; border-radius: 6px; cursor: pointer; color: white; font-weight: bold; }
+.cantonTitle { text-align: center; font-weight: bold; font-size: 1.2em; color: #007bff; margin-bottom: 10px; text-transform: uppercase; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Température - Canton</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="cantonTitle" id="nomCantonDisplay"></div>
+        <div class="row">
+            <label><input type="radio" name="tmax" value="37.5" checked onclick="calculer()">Plage 2.5 à 37.5 </label>
+        </div>
+        <hr>
+        <div class="row" style="margin-bottom: 5px; font-size: 12px; font-weight: bold; color: #555;">
+            <span style="width: 90px;">L (m)</span>
+            <span id="labelAt1" style="width: 70px; text-align: center;">AT1</span>
+            <span id="labelAt2" style="width: 70px; text-align: center;">AT2</span>
+        </div>
+        <div class="row">
+            <input id="longueur" type="number" readonly>
+            <input id="at1" type="number" step="any" placeholder="AT1" oninput="calculer()">
+            <input id="at2" type="number" step="any" placeholder="AT2" oninput="calculer()">
+        </div>
+        <hr>
+        <div class="row row-support">
+            <select id="supportList" onchange="changerDeSupport()"></select>
+            <div id="axeFlags"><span class="flag-tilt1">🚩</span><span class="flag-tilt2">🚩</span></div>
+        </div>
+        <div class="row">
+            Distance axe (m) <input id="distance" type="number" readonly>
+        </div>
+    </div>
+    <div class="result"><span id="tempVal"></span><span id="tempIcon"></span></div>
+    <div id="smartContainer">
+        <div id="smartInfo" style="text-align:center; color:#007bff; font-weight:bold; margin-bottom:5px;"></div>
+        <div class="axeRow" style="margin-bottom:15px; margin-top:0;">
+            <div><div class="axeLabel">AMONT</div><div id="cAmontSmart" class="c-display"></div></div>
+            <div class="axe" style="height:40px;"><span class="flag flag1" style="font-size:24px;">🚩</span><span class="flag flag2" style="font-size:24px;">🚩</span></div>
+            <div><div class="axeLabel">AVAL</div><div id="cAvalSmart" class="c-display"></div></div>
+        </div>
+        <div class="smartLine"><label><input type="checkbox" class="caseACocher" onchange="sauvegarderSaisie()"> Connexion:</label><span id="sCx"></span></div>
+        <div class="smartLine"><label><input type="checkbox" class="caseACocher" onchange="sauvegarderSaisie()"> Bras:</label><span id="sBras"></span></div>
+        <div class="smartLine"><label><input type="checkbox" class="caseACocher" onchange="sauvegarderSaisie()"> Pendule:</label><span id="sPendule"></span></div>
+        <div class="smartLine"><label><input type="checkbox" class="caseACocher" onchange="sauvegarderSaisie()"> IS Régul.:</label><span id="sIs"></span></div>
+        <button class="btn-export" onclick="exporterPDF()" style="background:#d9534f; margin-top: 20px;">Exporter Rapport (PDF)</button>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/support.js"></script>
+    <script src="js/calcul.js"></script>
+    <script src="js/pdf.js"></script>
+    <script src="js/init.js"></script>
+</body>
+</html>
