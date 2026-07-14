@@ -1,3 +1,5 @@
+// Nom du canton
+const nomCanton = "746000 045/30";
 // Données du canton : liste des supports avec leur identifiant et PK
 const donneesCanton = [
     {identifiant: "045/30", pointKilometrique: 45.500}, {identifiant: "045/34", pointKilometrique: 45.608},
